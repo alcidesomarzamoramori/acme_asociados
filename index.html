@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <title>Estudio Jurídico acme &amp; Asociados</title>
+  <b:include data='blog' name='all-head-content'/>
+
+  <!-- Fuentes Premium -->
+  <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap' rel='stylesheet'/>
+  <!-- Íconos de FontAwesome -->
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+
+  <b:skin><![CDATA[
+    /* Paleta Ultra Premium */
+    :root {
+      --bg-dark: #070B10;      
+      --bg-light: #FAFBFC;     
+      --gold: #D4AF37;         
+      --gold-hover: #E6C55C;   
+      --text-main: #2A2A2A;    
+      --text-muted: #6B7280;   
+      --white: #FFFFFF;
+    }
+    
+    /* Reset Global */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: 'Montserrat', sans-serif; 
+      color: var(--text-main); 
+      line-height: 1.7; 
+      background-color: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { 
+      font-family: 'Playfair Display', serif; 
+      font-weight: 600;
+    }
+    a { text-decoration: none; transition: all 0.4s ease; cursor: pointer; }
+
+    /* Animaciones al Scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Cabecera Premium */
+    header { 
+      background: rgba(7, 11, 16, 0.85); 
+      padding: 18px 5%; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: fixed; 
+      width: 100%;
+      top: 0; 
+      z-index: 1000;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+    .logo-container { 
+      display: flex; 
+      align-items: center; 
+      gap: 15px; 
+    }
+    .logo-container:hover .logo-text { opacity: 0.8; }
+    .logo-icon { color: var(--gold); font-size: 28px; }
+    .logo-text { 
+      color: var(--white); 
+      font-family: 'Playfair Display', serif; 
+      font-size: 24px; 
+      font-weight: 700; 
+      letter-spacing: 1.5px;
+      transition: opacity 0.3s ease;
+    }
+    .logo-text span { color: var(--gold); }
+    
+    /* Navegación Desktop */
+    nav { display: flex; gap: 30px; }
+    nav a { 
+      color: var(--white); 
+      font-weight: 400; 
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      opacity: 0.85;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--gold);
+      transition: width 0.4s ease;
+    }
+    nav a:hover { color: var(--gold); opacity: 1; }
+    nav a:hover::after { width: 100%; }
+
+    /* Menú Móvil */
+    .menu-toggle { display: none; color: var(--gold); font-size: 26px; cursor: pointer; }
+
+    /* Hero Section */
+    .hero { 
+      background: linear-gradient(rgba(7, 11, 16, 0.75), rgba(7, 11, 16, 0.95)), url('https://i.imgur.com/wz9LmBN.jpeg') center/cover no-repeat; 
+      background-attachment: fixed;
+      color: var(--white); 
+      text-align: center; 
+      padding: 0 20px; 
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero h1 { 
+      color: var(--white); 
+      font-size: 4.5rem; 
+      margin-bottom: 25px; 
+      letter-spacing: 1px;
+      line-height: 1.1;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .hero p { 
+      font-size: 1.2rem; 
+      font-weight: 300;
+      max-width: 700px; 
+      margin: 0 auto 50px auto; 
+      color: #D1D5DB;
+      letter-spacing: 0.5px;
+    }
+    .btn-gold { 
+      background: transparent; 
+      color: var(--gold); 
+      padding: 18px 50px; 
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500; 
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      display: inline-block; 
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 0%; height: 100%;
+      background: var(--gold);
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+    .btn-gold:hover::before { width: 100%; }
+    .btn-gold:hover { color: var(--bg-dark); }
+
+    /* Secciones Globales */
+    section { padding: 120px 5%; max-width: 1250px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 70px; }
+    .section-title { font-size: 3rem; color: var(--bg-dark); margin-bottom: 20px;}
+    .divider { width: 40px; height: 2px; background: var(--gold); margin: 0 auto; }
+
+    /* Grilla de Servicios */
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      gap: 40px; 
+    }
+    .card { 
+      background: var(--white); 
+      padding: 55px 40px; 
+      border: 1px solid rgba(0,0,0,0.03);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+      transition: all 0.5s ease;
+      position: relative;
+      z-index: 1;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; width: 100%; height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.5s ease;
+    }
+    .card:hover::after { transform: scaleX(1); transform-origin: left; }
+    .card:hover { box-shadow: 0 20px 50px rgba(7, 11, 16, 0.08); transform: translateY(-8px); }
+    .card-icon { color: var(--gold); font-size: 2.2rem; margin-bottom: 25px; display: inline-block; }
+    .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--bg-dark); }
+    .card p { font-size: 0.95rem; color: var(--text-muted); font-weight: 300; line-height: 1.8; }
+
+    /* Carrusel de Galería */
+    .carousel-wrapper {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      width: 100%;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(7, 11, 16, 0.8);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    .carousel-btn:hover { background: var(--gold); color: var(--bg-dark); }
+    .carousel-btn.prev { left: 20px; }
+    .carousel-btn.next { right: 20px; }
+
+    /* Testimonios */
+    .testimonios-grid {
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 30px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      padding: 40px;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+    .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 20px; }
+    .testimonial-card p {
+      font-style: italic;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 25px;
+      font-size: 1.05rem;
+    }
+    .testimonial-card h4 { color: var(--bg-dark); font-size: 1.1rem; letter-spacing: 1px; }
+
+    /* Quiénes Somos */
+    .nosotros { 
+      background: var(--bg-dark); 
+      color: var(--white);
+      padding: 130px 5%; 
+      position: relative;
+    }
+    .nosotros::before {
+      content: '"';
+      position: absolute;
+      top: 50px; left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 150px;
+      color: rgba(212, 175, 55, 0.05);
+      line-height: 1;
+    }
+    .nosotros-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .nosotros-wrapper .section-title { color: var(--white); }
+    .nosotros p { 
+      font-size: 1.4rem; 
+      font-weight: 300; 
+      color: #E5E7EB;
+      line-height: 2;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    /* Footer y Contacto */
+    footer { 
+      background: var(--bg-dark); 
+      color: var(--white); 
+      padding: 100px 5% 30px 5%; 
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-grid {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .footer-col h2 { color: var(--gold); font-size: 2.4rem; margin-bottom: 15px; }
+    .footer-col p.subtitle { font-size: 1rem; font-weight: 300; color: var(--text-muted); margin-bottom: 50px; }
+    
+    .contact-list { display: flex; flex-direction: column; gap: 30px; }
+    .contact-item { display: flex; align-items: flex-start; font-weight: 300; font-size: 1rem; color: #D1D5DB; line-height: 1.6;}
+    .contact-item i { color: var(--gold); font-size: 1.2rem; width: 40px; margin-top: 5px; }
+    .contact-item strong { color: var(--white); font-weight: 500; display: block; margin-bottom: 3px; font-family: 'Montserrat', sans-serif;}
+    
+    .social-bar { margin-top: 50px; display: flex; gap: 15px; }
+    .social-bar a {
+      display: flex; align-items: center; justify-content: center;
+      width: 50px; height: 50px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+    .social-bar a:hover { background: var(--gold); color: var(--bg-dark); }
+
+    /* Formulario */
+    .form-box { 
+      background: rgba(255,255,255,0.02); 
+      padding: 50px; 
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .input-group { margin-bottom: 30px; position: relative; }
+    .input-group input, .input-group textarea {
+      width: 100%; padding: 15px 0; background: transparent; 
+      border: none; border-bottom: 1px solid rgba(255,255,255,0.2);
+      color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+    .input-group input:focus, .input-group textarea:focus {
+      outline: none; border-bottom-color: var(--gold);
+    }
+    .input-group textarea { height: 100px; resize: none; }
+    .input-group input::placeholder, .input-group textarea::placeholder { color: #6B7280; font-weight: 300; }
+    
+    .btn-submit {
+      width: 100%; background: var(--gold); color: var(--bg-dark); border: none;
+      padding: 18px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.9rem;
+      letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.3s;
+      margin-top: 10px;
+    }
+    .btn-submit:hover { background: var(--gold-hover); }
+
+    /* Copyright */
+    .copyright { 
+      margin-top: 100px; 
+      text-align: center; 
+      font-size: 0.85rem; 
+      color: #777; 
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Botón Flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      animation: pulse-wa 2s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #20BA56;
+    }
+    @keyframes pulse-wa {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Diseño Responsivo */
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 3.8rem; }
+      .footer-grid { gap: 40px; }
+      .form-box { padding: 30px; }
+      nav { gap: 20px; }
+      nav a { font-size: 0.8rem; }
+    }
+    @media (max-width: 768px) {
+      header { padding: 15px 20px; }
+      .menu-toggle { display: block; }
+      nav {
+        position: absolute; top: 100%; left: 0; width: 100%;
+        background: rgba(7, 11, 16, 0.98); backdrop-filter: blur(15px);
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+        flex-direction: column; gap: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s ease-in-out;
+      }
+      nav.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+      nav a { padding: 25px; display: block; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      nav a::after { display: none; }
+      
+      .hero { height: auto; padding: 180px 20px 120px 20px; }
+      .hero h1 { font-size: 2.8rem; }
+      
+      section { padding: 80px 5%; }
+      .section-title { font-size: 2.3rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 60px; }
+      
+      .carousel-slide { height: 40vh; }
+      .carousel-btn { width: 40px; height: 40px; font-size: 1rem; }
+      
+      .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
+    }
+
+    #blogger-required { display: none; }
+  ]]></b:skin>
+  <b:template-skin><![CDATA[]]></b:template-skin>
+</head>
+<body>
+
+  <!-- Botón WhatsApp Flotante -->
+  <a class='whatsapp-float' href='https://wa.me/51951440186?text=Hola,%20deseo%20agendar%20una%20cita%20con%20el%20estudio%20acme%20%26%20Asociados.' target='_blank' title='Contáctanos por WhatsApp'>
+    <i class='fab fa-whatsapp'/>
+  </a>
+
+  <header>
+    <!-- Logo enlazado al inicio -->
+    <a class='logo-container' href='#inicio'>
+      <i class='fa-solid fa-scale-balanced logo-icon'/>
+      <div class='logo-text'>acme <span>&amp; Asociados</span></div>
+    </a>
+    
+    <i class='fa-solid fa-bars menu-toggle' id='mobile-menu'/>
+    <nav id='nav-links'>
+      <a href='#inicio'>Inicio</a>
+      <a href='#servicios'>Servicios</a>
+      <a href='#galeria'>Galería</a>
+      <a href='#testimonios'>Testimonios</a>
+      <a href='#contacto'>Contacto</a>
+    </nav>
+  </header>
+
+  <div class='hero' id='inicio'>
+    <h1 class='reveal'>Estudio Jurídico <br/>acme &amp; Asociados</h1>
+    <p class='reveal'>Prestigio, rigor y resultados. Representación estratégica y ética para proteger su patrimonio y sus derechos con absoluta firmeza.</p>
+    <a class='btn-gold reveal' href='#contacto'>Agendar Evaluación</a>
+  </div>
+
+  <section id='servicios'>
+    <div class='section-header reveal'>
+      <h2 class='section-title'>Servicios</h2>
+      <div class='divider'/>
+    </div>
+    <div class='grid'>
+      <div class='card reveal'>
+        <i class='fa-solid fa-gavel card-icon'/>
+        <h3>Derecho Civil y Procesal</h3>
+        <p>Defensa estratégica en litigios, resolución de conflictos patrimoniales y salvaguarda de sus intereses ante tribunales.</p>
+      </div>
+      <div class='card reveal'>
+        <i class='fa-solid fa-scale-unbalanced card-icon'/>
+        <h3>Derecho Penal</h3>
+        <p>Representación rigurosa en investigaciones y procesos penales, garantizando una defensa técnica implacable.</p>
+      </div>
+      <div class='card reveal'>
+        <i class='fa-solid fa-briefcase card-icon'/>
+        <h3>Derecho Laboral</h3>
+        <p>Asesoría en conflictos obrero-patronales, auditorías de cumplimiento normativo y representación en juicios.</p>
+      </div>
+      <div class='card reveal'>
+        <i class='fa-solid fa-users card-icon'/>
+        <h3>Derecho de Familia</h3>
+        <p>Gestión firme y discreta en divorcios, régimen de tenencia, pensiones de alimentos y sucesiones.</p>
+      </div>
+      <div class='card reveal'>
+        <i class='fa-solid fa-building card-icon'/>
+        <h3>Derecho Empresarial</h3>
+        <p>Estructuración legal de negocios, contratos comerciales y blindaje preventivo para su empresa.</p>
+      </div>
+      <div class='card reveal'>
+        <i class='fa-solid fa-handshake card-icon'/>
+        <h3>Asesoría Corporativa</h3>
+        <p>Acompañamiento directivo en constitución de sociedades, procesos de fusiones y gobierno corporativo.</p>
+      </div>
+      <div class='card reveal'>
+        <i class='fa-solid fa-file-signature card-icon'/>
+        <h3>Derecho Administrativo</h3>
+        <p>Defensa técnica ante entidades públicas, impugnación de resoluciones y manejo de licitaciones.</p>
+      </div>
+      <div class='card reveal'>
+        <i class='fa-solid fa-stamp card-icon'/>
+        <h3>Derecho Registral</h3>
+        <p>Saneamiento de propiedades, inscripciones precisas y protección absoluta del patrimonio inmobiliario.</p>
+      </div>
+      <div class='card reveal'>
+        <i class='fa-solid fa-file-invoice card-icon'/>
+        <h3>Asesoría Administrativa</h3>
+        <p>Optimización y gestión integral de trámites, licencias y procesos burocráticos para garantizar la operatividad continua de sus negocios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nueva Sección: Carrusel -->
+  <section id='galeria'>
+    <div class='section-header reveal'>
+      <h2 class='section-title'>Nuestras Instalaciones</h2>
+      <div class='divider'/>
+    </div>
+    <div class='carousel-wrapper reveal'>
+      <button class='carousel-btn prev' id='btn-prev'><i class='fas fa-chevron-left'/></button>
+      <div class='carousel-track' id='track'>
+        <img alt='Instalaciones acme &amp; Asociados 1' class='carousel-slide' src='https://i.imgur.com/wz9LmBN.jpeg'/>
+        <img alt='Instalaciones acme &amp; Asociados 2' class='carousel-slide' src='https://i.imgur.com/wz9LmBN.jpeg'/>
+        <img alt='Instalaciones acme &amp; Asociados 3' class='carousel-slide' src='https://i.imgur.com/wz9LmBN.jpeg'/>
+      </div>
+      <button class='carousel-btn next' id='btn-next'><i class='fas fa-chevron-right'/></button>
+    </div>
+  </section>
+
+  <!-- Nueva Sección: Testimonios -->
+  <section id='testimonios'>
+    <div class='section-header reveal'>
+      <h2 class='section-title'>Lo que dicen nuestros clientes</h2>
+      <div class='divider'/>
+    </div>
+    <div class='testimonios-grid'>
+      <div class='testimonial-card reveal'>
+        <div class='stars'>
+          <i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/>
+        </div>
+        <p>&quot;Resolvieron mi caso patrimonial con una rapidez y franqueza que no había visto en otros estudios. Excelente servicio y profesionalismo total.&quot;</p>
+        <h4>Karen Heras</h4>
+      </div>
+      <div class='testimonial-card reveal'>
+        <div class='stars'>
+          <i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/>
+        </div>
+        <p>&quot;Desde la primera reunión te hablan con la verdad, sin falsas expectativas. Ejecutaron una estrategia legal impecable que blindó mi negocio.&quot;</p>
+        <h4>Corina Zamora</h4>
+      </div>
+      <div class='testimonial-card reveal'>
+        <div class='stars'>
+          <i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/><i class='fas fa-star'/>
+        </div>
+        <p>&quot;Un equipo altamente capacitado en derecho corporativo. Me guiaron paso a paso en la reestructuración de mi empresa. Recomendados al 100%.&quot;</p>
+        <h4>Omar Zamora</h4>
+      </div>
+    </div>
+  </section>
+
+  <div class='nosotros' id='nosotros'>
+    <div class='nosotros-wrapper reveal'>
+      <div class='section-header'>
+        <h2 class='section-title'>Quiénes Somos</h2>
+        <div class='divider'/>
+      </div>
+      <p>&quot;En acme &amp; Asociados no damos rodeos ni creamos falsas expectativas. Somos profesionales regidos por la excelencia, la franqueza y el rigor técnico. Analizamos la viabilidad real de su caso desde el primer momento, garantizando una representación confidencial y enfocada estrictamente en obtener resultados tangibles para usted y su empresa.&quot;</p>
+    </div>
+  </div>
+
+  <footer id='contacto'>
+    <div class='footer-grid'>
+      
+      <!-- Información Directa -->
+      <div class='footer-col reveal'>
+        <h2>Agenda tu cita</h2>
+        <p class='subtitle'>Atención presencial y virtual. Permítenos evaluar tu caso con el rigor que exige.</p>
+        
+        <div class='contact-list'>
+          <div class='contact-item'>
+            <i class='fas fa-map-marker-alt'/>
+            <div>
+              <strong>Sede Principal</strong>
+              Mz Ñ - Lt 18. Oficina 201<br/>Urbanización Covicorti - Natasha Alta<br/>Trujillo, Perú
+            </div>
+          </div>
+          <div class='contact-item'>
+            <i class='fas fa-phone-alt'/>
+            <div>
+              <strong>Líneas de Atención Directa</strong>
+              951 440 186<br/>957 826 058
+            </div>
+          </div>
+          <div class='contact-item'>
+            <i class='fas fa-envelope'/>
+            <div>
+              <strong>Correo Institucional</strong>
+              zecs18@hotmail.com
+            </div>
+          </div>
+        </div>
+
+        <div class='social-bar'>
+          <a href='#' target='_blank' title='Facebook'><i class='fab fa-facebook-f'/></a>
+          <a href='#' target='_blank' title='Instagram'><i class='fab fa-instagram'/></a>
+          <a href='#' target='_blank' title='TikTok'><i class='fab fa-tiktok'/></a>
+        </div>
+      </div>
+
+      <!-- Formulario Funcional -->
+      <div class='footer-col reveal'>
+        <div class='form-box'>
+          <form action='https://formspree.io/f/tu-codigo-aqui' method='POST'>
+            <div class='input-group'>
+              <input name='nombre' placeholder='Nombre Completo' required='required' type='text'/>
+            </div>
+            <div class='input-group'>
+              <input name='telefono' placeholder='Número de Contacto' required='required' type='tel'/>
+            </div>
+            <div class='input-group'>
+              <input name='correo' placeholder='Correo Electrónico' required='required' type='email'/>
+            </div>
+            <div class='input-group'>
+              <textarea name='mensaje' placeholder='Breve descripción de su requerimiento legal...'/>
+            </div>
+            <button class='btn-submit' type='submit'>Enviar Requerimiento</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='copyright'>
+      &amp;copy; 2026 Estudio Jurídico acme &amp; Asociados. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Elemento requerido por Blogger -->
+  <div id='blogger-required'>
+    <b:section class='main' id='main' showaddelement='yes'>
+      <b:widget id='Blog1' locked='false' title='Entradas del blog' type='Blog' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+          <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+          <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+          <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showAuthor'>true</b:widget-setting>
+          <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+          <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='reactionsLabel'/>
+          <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+          <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+          <b:widget-setting name='showLabels'>true</b:widget-setting>
+          <b:widget-setting name='showLocation'>true</b:widget-setting>
+          <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+          <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+          <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+          <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+          <b:widget-setting name='showReactions'>false</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'/>
+        <b:includable id='aboutPostAuthor'>
+  <div class='author-name'>
+    <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+      <span>
+        <data:post.author.name/>
+      </span>
+    </a>
+  </div>
+  <div>
+    <span class='author-desc'>
+      <data:post.author.aboutMe/>
+    </span>
+  </div>
+</b:includable>
+        <b:includable id='addComments'>
+  <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:message name='messages.postAComment'/>
+  </a>
+</b:includable>
+        <b:includable id='commentAuthorAvatar'>
+  <div class='avatar-image-container'>
+    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+  </div>
+</b:includable>
+        <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+        <b:includable id='commentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+        <b:includable id='commentFormIframeSrc' var='post'>
+  <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+</b:includable>
+        <b:includable id='commentItem' var='comment'>
+  <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+    <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+
+    <div class='comment-block'>
+      <div class='comment-author'>
+        <b:if cond='data:comment.authorUrl'>
+          <b:message name='messages.authorSaidWithLink'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+            <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.authorSaid'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+          </b:message>
+        </b:if>
+      </div>
+      <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+        <data:comment.body/>
+      </div>
+      <div class='comment-footer'>
+        <span class='comment-timestamp'>
+          <a expr:href='data:comment.url' title='comment permalink'>
+            <data:comment.timestamp/>
+          </a>
+          <b:include data='comment' name='commentDeleteIcon'/>
+        </span>
+      </div>
+    </div>
+  </div>
+</b:includable>
+        <b:includable id='commentList' var='comments'>
+  <div id='comments-block'>
+    <b:loop values='data:comments' var='comment'>
+      <b:include data='comment' name='commentItem'/>
+    </b:loop>
+  </div>
+</b:includable>
+        <b:includable id='commentPicker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threadedComments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+        <b:includable id='comments' var='post'>
+  <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+    <b:if cond='data:post.allowComments'>
+
+      <b:include name='commentsTitle'/>
+
+      <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+        <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <div class='paging-control-container'>
+          <b:if cond='data:post.hasOlderLinks'>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+              <data:messages.oldest/>
+            </a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+              <data:messages.older/>
+            </a>
+          </b:if>
+
+          <span class='comment-range-text'>
+            <data:post.commentRangeText/>
+          </span>
+
+          <b:if cond='data:post.hasNewerLinks'>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+              <data:messages.newer/>
+            </a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+              <data:messages.newest/>
+            </a>
+          </b:if>
+        </div>
+      </b:if>
+
+      <div class='footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='commentForm'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:post.allowComments'>
+            <b:include data='post' name='addComments'/>
+          </b:if>
+        </b:if>
+      </div>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+        <b:includable id='commentsTitle'>
+  <h3 class='title'><data:messages.comments/></h3>
+</b:includable>
+        <b:includable id='feedLinks'>
+  <b:if cond='!data:view.isPost'> <!-- Blog feed links -->
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+  <b:else/> <!--Post feed links -->
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments and data:post.feedLinks'>
+          <b:include data='post.feedLinks' name='feedLinksBody'/>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:messages.subscribeTo/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+        <b:includable id='homePageLink'>
+  <a class='home-link' expr:href='data:blog.homepageUrl'>
+    <data:messages.home/>
+  </a>
+</b:includable>
+        <b:includable id='iframeComments' var='post'>
+  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+        <b:includable id='inlineAd' var='post'>
+  <b:if cond='!data:view.isPreview'>
+    <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+      <!-- Ad -->
+      <div class='inline-ad'>
+        <b:if cond='data:this.adCode != &quot;&quot;'>
+          <data:this.adCode/>
+        <b:else/>
+          <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <div class='inline-ad'>
+      <div class='inline-ad-placeholder'>
+        <span><b:message name='messages.adsGoHere'/></span>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='nextPageLink'>
+  <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+    <data:messages.olderPosts/>
+  </a>
+</b:includable>
+        <b:includable id='post' var='post'>
+  <div class='post'>
+    <b:include data='post' name='postMeta'/>
+    <b:include data='post' name='postTitle'/>
+    <b:include name='headerByline'/>
+    <b:if cond='data:view.isSingleItem'>
+      <b:include data='post' name='postBody'/>
+    <b:else/>
+      <b:include data='post' name='postBodySnippet'/>
+      <b:include data='post' name='postJumpLink'/>
+    </b:if>
+    <b:include data='post' name='postFooter'/>
+  </div>
+</b:includable>
+        <b:includable id='postBody' var='post'>
+  <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
+  <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+    <data:post.body/>
+  </div>
+</b:includable>
+        <b:includable id='postBodySnippet' var='post'>
+  <b:include data='post' name='postBody'/>
+</b:includable>
+        <b:includable id='postCommentsAndAd' var='post'>
+  <article class='post-outer-container'>
+    <!-- Post title and body -->
+    <div class='post-outer'>
+      <b:include data='post' name='post'/>
+    </div>
+
+    <!-- Comments -->
+    <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+
+    <!-- Show ad inside post container, after comments, if single item. -->
+    <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+  </article>
+
+  <!-- Show ad outside post container (between posts) for feed pages. -->
+  <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+</b:includable>
+        <b:includable id='postCommentsLink'>
+  <b:if cond='data:view.isMultipleItems'>
+    <span class='byline post-comment-link container'>
+      <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+    </span>
+  </b:if>
+</b:includable>
+        <b:includable id='postFooter' var='post'>
+  <div class='post-footer'>
+    <b:include name='footerBylines'/>
+    <b:include data='post' name='postFooterAuthorProfile'/>
+  </div>
+</b:includable>
+        <b:includable id='postFooterAuthorProfile' var='post'>
+  <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+    <div class='author-profile'>
+      <b:if cond='data:post.author.authorPhoto.url'>
+        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <div class='author-about'>
+          <b:include data='post' name='aboutPostAuthor'/>
+        </div>
+      <b:else/>
+        <b:include data='post' name='aboutPostAuthor'/>
+      </b:if>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='postHeader' var='post'>
+  <b:include name='headerByline'/>
+</b:includable>
+        <b:includable id='postMeta' var='post'>
+  <b:include data='post' name='postMetadataJSON'/>
+</b:includable>
+        <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
+        <b:includable id='postTitle' var='post'>
+  <a expr:name='data:post.id'/>
+  <b:if cond='data:post.title != &quot;&quot;'>
+    <h3 class='post-title entry-title'>
+      <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+        <a expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+    </h3>
+  </b:if>
+</b:includable>
+        <b:includable id='previousPageLink'>
+  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+    <data:messages.newerPosts/>
+  </a>
+</b:includable>
+        <b:includable id='threadedCommentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+        <b:includable id='threadedCommentJs' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+  <b:template-script inline='true' name='threaded_comments'/>
+  <script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        <data:post.commentJso/>,
+        <data:post.commentMsgs/>,
+        <data:post.commentConfig/>);
+  </script>
+</b:includable>
+        <b:includable id='threadedComments' var='post'>
+  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+
+    <b:include name='commentsTitle'/>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threadedCommentJs'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threadedCommentForm'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+        <b:includable id='tooltipCss'>
+  <!-- LINT.IfChange -->
+  <style>
+    .post-body a.b-tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-20%, 1px);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip iframe {
+      width: 200px;
+      height: 198px;
+      max-width: none;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) {
+      .post-body a.b-tooltip-container:hover .b-tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  </style>
+  <!-- LINT.ThenChange(//depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
+</b:includable>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <script>
+    // 1. Control del Menú Móvil
+    const menuToggle = document.getElementById(&#39;mobile-menu&#39;);
+    const navLinks = document.getElementById(&#39;nav-links&#39;);
+    
+    menuToggle.addEventListener(&#39;click&#39;, () =&gt; {
+      navLinks.classList.toggle(&#39;active&#39;);
+    });
+
+    // 2. Navegación suave global
+    document.querySelectorAll(&#39;a[href^=&quot;#&quot;]&#39;).forEach(anchor =&gt; {
+        anchor.addEventListener(&#39;click&#39;, function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute(&#39;href&#39;);
+            if(targetId === &#39;#&#39;) return;
+            
+            navLinks.classList.remove(&#39;active&#39;);
+            
+            document.querySelector(targetId).scrollIntoView({
+                behavior: &#39;smooth&#39;
+            });
+        });
+    });
+
+    // 3. Lógica del Carrusel
+    const track = document.getElementById(&#39;track&#39;);
+    const slides = Array.from(track.children);
+    const nextButton = document.getElementById(&#39;btn-next&#39;);
+    const prevButton = document.getElementById(&#39;btn-prev&#39;);
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      track.style.transform = &#39;translateX(-&#39; + currentIndex * 100 + &#39;%)&#39;;
+    }
+
+    nextButton.addEventListener(&#39;click&#39;, () =&gt; {
+      currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+      updateCarousel();
+    });
+
+    prevButton.addEventListener(&#39;click&#39;, () =&gt; {
+      currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+      updateCarousel();
+    });
+
+    // Deslizamiento táctil en móviles para el carrusel
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener(&#39;touchstart&#39;, e =&gt; {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+    
+    track.addEventListener(&#39;touchend&#39;, e =&gt; {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX &gt; 50) {
+        currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+      }
+      if (touchEndX - touchStartX &gt; 50) {
+        currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+        updateCarousel();
+      }
+    }, {passive: true});
+
+    // 4. Animaciones Premium al hacer Scroll
+    const revealElements = document.querySelectorAll(&#39;.reveal&#39;);
+    const revealOptions = { threshold: 0.15, rootMargin: &quot;0px 0px -50px 0px&quot; };
+
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry =&gt; {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(&#39;active&#39;);
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, revealOptions);
+
+    revealElements.forEach(el =&gt; revealOnScroll.observe(el));
+    
+    // Activar hero inmediatamente
+    setTimeout(() =&gt; {
+        document.querySelectorAll(&#39;.hero .reveal&#39;).forEach(el =&gt; el.classList.add(&#39;active&#39;));
+    }, 100);
+  </script>
+
+</body>
+</html>
