@@ -1,2 +1,2 @@
-# acme_asociados
+# acme_asociados.
 Página para estudio jurídico.
