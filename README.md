@@ -1,3 +1,3 @@
-# acme_asociados.
+# acme_asociados
 Página para estudio jurídico.
-Agregar README 03 OCT.
+Agregar README 06 OCT.
